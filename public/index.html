@@ -96,41 +96,60 @@
     <figure class="scale">
   <figcaption class="scale__caption">Sizes we fill, shown to scale</figcaption>
   <div class="scale__item">
-    <svg width="34" height="59" viewBox="0 0 40 70" role="img" aria-label="500 millilitre bottle">
-      <defs><clipPath id="c500"><path d="M15 8h10l5 8v48a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16z"/></clipPath></defs>
-      <rect x="16" y="1" width="8" height="7" fill="var(--ink-muted)"/>
-      <g clip-path="url(#c500)"><rect width="40" height="70" fill="var(--surface-sunk)"/><rect class="fill" y="22" width="40" height="48" fill="var(--p-handwash)"/></g>
-      <path d="M15 8h10l5 8v48a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V16z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+    <svg width="120" height="190" viewBox="0 0 120 190" role="img" aria-label="500 millilitre bottle">
+      <defs><linearGradient id="pink500" x1="0" x2="1"><stop stop-color="#b91458"/><stop offset=".22" stop-color="#ed2672"/><stop offset=".72" stop-color="#d71963"/><stop offset="1" stop-color="#9d164d"/></linearGradient></defs>
+      <ellipse cx="60" cy="171" rx="34" ry="7" fill="rgba(27,33,25,0.12)"/>
+      <path d="M49 32h22v15c0 5 4 8 9 10l3 1v91c0 11-8 18-23 18s-23-7-23-18V58l3-1c5-2 9-5 9-10V32Z" fill="url(#pink500)"/>
+      <path d="M49 32h22v15c0 5 4 8 9 10l3 1v91c0 11-8 18-23 18s-23-7-23-18V58l3-1c5-2 9-5 9-10V32Z" fill="none" stroke="#8e1648" stroke-width="1.5"/>
+      <rect x="51" y="22" width="18" height="12" rx="3" fill="#eef1eb"/>
+      <path d="M53 23v9m4-9v9m4-9v9m4-9v9" stroke="#bdc5b9" stroke-width="1"/>
+      <path d="M48 58h24" stroke="rgba(255,255,255,0.34)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M48 96h24" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+      <path d="M50 151c6 4 13 5 20 0" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <span class="scale__label">500 ml</span>
   </div>
   <div class="scale__item">
-    <svg width="42" height="74" viewBox="0 0 44 78" role="img" aria-label="1 litre bottle">
-      <defs><clipPath id="c1"><path d="M16 9h12l5 9v52a4 4 0 0 1-4 4H15a4 4 0 0 1-4-4V18z"/></clipPath></defs>
-      <rect x="17" y="1" width="10" height="8" fill="var(--ink-muted)"/>
-      <g clip-path="url(#c1)"><rect width="44" height="78" fill="var(--surface-sunk)"/><rect class="fill" y="24" width="44" height="54" fill="var(--p-multi)"/></g>
-      <path d="M16 9h12l5 9v52a4 4 0 0 1-4 4H15a4 4 0 0 1-4-4V18z" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+    <svg width="150" height="230" viewBox="0 0 150 230" role="img" aria-label="1 litre bottle">
+      <defs><linearGradient id="green1l" x1="0" x2="1"><stop stop-color="#087c27"/><stop offset=".22" stop-color="#28bf3e"/><stop offset=".72" stop-color="#16a930"/><stop offset="1" stop-color="#086a25"/></linearGradient></defs>
+      <ellipse cx="75" cy="212" rx="42" ry="9" fill="rgba(27,33,25,0.12)"/>
+      <path d="M62 40h26v16c0 5 4 8 9 10l4 1v112c0 20-10 31-26 31s-26-11-26-31V67l4-1c5-2 9-5 9-10V40Z" fill="url(#green1l)"/>
+      <path d="M62 40h26v16c0 5 4 8 9 10l4 1v112c0 20-10 31-26 31s-26-11-26-31V67l4-1c5-2 9-5 9-10V40Z" fill="none" stroke="#087323" stroke-width="1.6"/>
+      <rect x="63" y="27" width="24" height="14" rx="4" fill="#eef1eb"/>
+      <path d="M66 28v11m5-11v11m5-11v11m5-11v11" stroke="#bdc5b9" stroke-width="1.1"/>
+      <path d="M60 68h30" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M61 116h28" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+      <path d="M62 180c8 5 17 6 26 0" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <span class="scale__label">1 litre</span>
   </div>
   <div class="scale__item">
-    <svg width="74" height="126" viewBox="0 0 78 132" role="img" aria-label="5 litre jerrycan">
-      <defs><clipPath id="c5"><rect x="8" y="30" width="62" height="98" rx="5"/></clipPath></defs>
-      <path d="M22 30V16h34v14" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="square"/>
-      <rect x="52" y="8" width="14" height="12" fill="var(--ink-muted)"/>
-      <g clip-path="url(#c5)"><rect width="78" height="132" fill="var(--surface-sunk)"/><rect class="fill" y="44" width="78" height="88" fill="var(--p-dish)"/></g>
-      <rect x="8" y="30" width="62" height="98" rx="5" fill="none" stroke="var(--ink)" stroke-width="1.9"/>
+    <svg width="190" height="275" viewBox="0 0 190 275" role="img" aria-label="5 litre jerrycan">
+      <defs><linearGradient id="orange5l" x1="0" x2="1"><stop stop-color="#b95b05"/><stop offset=".2" stop-color="#ff9512"/><stop offset=".75" stop-color="#ee7800"/><stop offset="1" stop-color="#b95904"/></linearGradient></defs>
+      <ellipse cx="95" cy="249" rx="65" ry="10" fill="rgba(27,33,25,0.12)"/>
+      <path d="M62 57V31c0-11 9-20 20-20h30c11 0 20 9 20 20v27" fill="none" stroke="#e4e5df" stroke-width="12" stroke-linecap="round"/>
+      <path d="M59 56h76v19h13c8 0 13 6 13 14v110c0 29-18 47-52 47H81c-34 0-52-18-52-47V89c0-8 5-14 13-14h17V56Z" fill="url(#orange5l)"/>
+      <path d="M59 56h76v19h13c8 0 13 6 13 14v110c0 29-18 47-52 47H81c-34 0-52-18-52-47V89c0-8 5-14 13-14h17V56Z" fill="none" stroke="#b75b08" stroke-width="1.8"/>
+      <rect x="119" y="31" width="27" height="25" rx="5" fill="#252b2a"/>
+      <path d="M123 34v19m5-19v19m5-19v19m5-19v19" stroke="#4e5650" stroke-width="1.6"/>
+      <path d="M52 83h76" stroke="rgba(255,255,255,0.32)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M54 137h76" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+      <path d="M62 213c16 8 34 9 50 0" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3" stroke-linecap="round"/>
     </svg>
     <span class="scale__label">5 litres</span>
   </div>
   <div class="scale__item">
-    <svg width="112" height="200" viewBox="0 0 116 206" role="img" aria-label="20 litre jerrycan">
-      <defs><clipPath id="c20"><rect x="10" y="42" width="96" height="158" rx="7"/></clipPath></defs>
-      <path d="M30 42V22h52v20" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="square"/>
-      <rect x="78" y="10" width="20" height="16" fill="var(--ink-muted)"/>
-      <g clip-path="url(#c20)"><rect width="116" height="206" fill="var(--surface-sunk)"/><rect class="fill" y="66" width="116" height="140" fill="var(--p-disinfect)"/></g>
-      <rect x="10" y="42" width="96" height="158" rx="7" fill="none" stroke="var(--ink)" stroke-width="2.2"/>
-      <g stroke="var(--ink)" stroke-width="1.2" opacity=".4"><line x1="96" y1="80" x2="106" y2="80"/><line x1="96" y1="115" x2="106" y2="115"/><line x1="96" y1="150" x2="106" y2="150"/></g>
+    <svg width="210" height="310" viewBox="0 0 210 310" role="img" aria-label="20 litre jerrycan">
+      <defs><linearGradient id="purple20l" x1="0" x2="1"><stop stop-color="#63319b"/><stop offset=".2" stop-color="#a34be0"/><stop offset=".75" stop-color="#8735bf"/><stop offset="1" stop-color="#5b2c91"/></linearGradient></defs>
+      <ellipse cx="105" cy="284" rx="72" ry="12" fill="rgba(27,33,25,0.12)"/>
+      <path d="M66 65V38c0-14 11-25 25-25h31c14 0 25 11 25 25v27" fill="none" stroke="#e4e5df" stroke-width="15" stroke-linecap="round"/>
+      <path d="M62 64h88v22h22c9 0 15 7 15 16v126c0 38-23 59-63 59H86c-40 0-63-21-63-59V102c0-9 6-16 15-16h24V64Z" fill="url(#purple20l)"/>
+      <path d="M62 64h88v22h22c9 0 15 7 15 16v126c0 38-23 59-63 59H86c-40 0-63-21-63-59V102c0-9 6-16 15-16h24V64Z" fill="none" stroke="#5b2e8b" stroke-width="2"/>
+      <rect x="135" y="37" width="34" height="28" rx="5" fill="#252b2a"/>
+      <path d="M140 40v22m6-22v22m6-22v22m6-22v22" stroke="#4e5650" stroke-width="1.8"/>
+      <path d="M55 95h90" stroke="rgba(255,255,255,0.3)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M56 157h90" stroke="rgba(255,255,255,0.17)" stroke-width="2.5"/>
+      <path d="M70 239c18 9 40 10 59 0" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3" stroke-linecap="round"/>
     </svg>
     <span class="scale__label">20 litres</span>
   </div>
