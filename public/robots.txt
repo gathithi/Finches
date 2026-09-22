@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /originals/
+
+Sitemap: https://deterpro.co.ke/sitemap.xml

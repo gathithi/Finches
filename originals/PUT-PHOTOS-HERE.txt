@@ -1,0 +1,7 @@
+﻿Save the original photos here with these exact names, then run crop-images.ps1
+
+  logo.png          the orange Finches wordmark
+  handwash-3.jpg    the three 500ml pump bottles (yellow, red, blue)
+  spray-2.jpg       the 500ml trigger sprays
+  bottles-1l.jpg    the 1L dish wash + 1L multipurpose pair
+  drums-3.jpg       the three 20L drums

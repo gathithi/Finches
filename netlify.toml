@@ -1,0 +1,44 @@
+# Netlify configuration for the Finches site.
+# Static HTML, no build step - Netlify just serves this folder.
+
+[build]
+  publish = "public"
+
+# ---------------------------------------------------------------- caching
+# Asset URLs carry ?v=N (see $ASSETV in build-finches.ps1), so they can be
+# cached hard. Pages must revalidate so price changes appear immediately.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---------------------------------------------------------------- security
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+
+
+# ---------------------------------------------------------------- HSTS
+# Tells browsers never to use http:// for this domain again.
+#
+# Leave this commented out until the site has been live and stable on HTTPS
+# for a few weeks. Once a browser has seen the header it will refuse plain
+# http for max-age seconds, so a certificate problem becomes a hard outage
+# for returning visitors. Do not add "preload" unless you are certain -
+# removing a domain from the preload list takes months.
+#
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
