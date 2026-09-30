@@ -108,34 +108,51 @@
 
     var number = builder.getAttribute('data-whatsapp') || WHATSAPP_ORDERS;
 
+    var totalOut = builder.querySelector('[data-total]');
+
     function readRow(row) {
       var input = row.querySelector('input');
       var qty = parseInt(input && input.value, 10);
       if (!qty || qty < 0 || isNaN(qty)) qty = 0;
       var scentSelect = row.querySelector('[data-scent]');
+      var priceRaw = row.getAttribute('data-price');
+      var price = priceRaw ? parseInt(priceRaw, 10) : null;
       return {
         name: row.getAttribute('data-name') || '',
         size: row.getAttribute('data-size') || '',
         scent: scentSelect ? scentSelect.value : '',
-        qty: qty
+        qty: qty,
+        price: price
       };
     }
 
-    // Prices are quoted by Deterpro, not published, so this builds a list and
-    // nothing else. There is no total to compute and none to animate.
+    function formatKsh(n) {
+      return 'KSh ' + n.toLocaleString('en-KE');
+    }
+
     function update() {
       var lines = [];
+      var total = 0;
+      var hasPending = false;
 
       Array.prototype.forEach.call(rows, function (row) {
         var item = readRow(row);
         if (item.qty > 0) {
           var line = item.qty + ' x ' + item.name + ' ' + item.size;
           if (item.scent) line += ' (' + item.scent + ')';
+          if (item.price != null) {
+            line += ' @ ' + formatKsh(item.price) + ' = ' + formatKsh(item.qty * item.price);
+            total += item.qty * item.price;
+          } else {
+            line += ' (price to be confirmed)';
+            hasPending = true;
+          }
           lines.push(line);
         }
       });
 
       if (countOut) countOut.textContent = lines.length ? String(lines.length) : '0';
+      if (totalOut) totalOut.textContent = formatKsh(total) + (hasPending ? '+' : '');
 
       var disabled = lines.length === 0;
       sendBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
@@ -143,7 +160,8 @@
       var message =
         'Hello Finches, please quote me for:\n\n' +
         lines.join('\n') +
-        '\n\nPlease confirm the price and the delivery cost.';
+        '\n\nEstimated total: ' + formatKsh(total) + (hasPending ? ' + items marked price to be confirmed' : '') +
+        '\n\nPlease confirm this and the delivery cost.';
 
       sendBtn.setAttribute('href', 'https://wa.me/' + number + '?text=' + encodeURIComponent(message));
     }
